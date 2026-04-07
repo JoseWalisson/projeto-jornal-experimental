@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MONTAGE — Versão Digital</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Lora:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #48457b;
+            --accent: #592eae;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Lora', serif;
+            background-color: var(--primary);
+            color: var(--white);
+            line-height: 1.6;
+        }
+
+        header {
+            padding: 40px 20px;
+            text-align: center;
+            background-color: var(--accent);
+        }
+
+        header h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.5rem;
+            letter-spacing: 2px;
+        }
+
+        header p {
+            margin-top: 10px;
+            font-size: 1rem;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+            flex-wrap: wrap;
+        }
+
+        nav button {
+            background: var(--accent);
+            border: none;
+            padding: 10px 20px;
+            color: var(--white);
+            font-family: 'Montserrat', sans-serif;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        nav button:hover {
+            background: #6d3edb;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: auto;
+            padding: 40px 20px;
+        }
+
+        .article {
+            margin-bottom: 60px;
+            display: none;
+        }
+
+        .article.active {
+            display: block;
+        }
+
+        .article h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .highlight {
+            background-color: var(--accent);
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            background-color: var(--accent);
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+        }
+
+        /* ===== AJUSTE DAS IMAGENS ===== */
+        .article img {
+            width: 100%;
+            max-height: 400px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin: 20px 0;
+            transition: 0.3s ease;
+            cursor: pointer;
+        }
+
+        /* Imagem específica da entrevista (Darci) */
+        /*.img-top {
+            object-position: top;
+        }
+*/
+        .article img:hover {
+            transform: scale(1.02);
+            opacity: 0.9;
+        }
+
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>MONTAGE</h1>
+    <p>1ª Edição — 8 de maio de 2026</p>
+    <p>Design. Tecnologia. Cultura.</p>
+</header>
+
+<nav>
+    <a href="index.html"><button>Home</button></a>
+    <button onclick="showArticle('ia')">Destaque IA</button>
+    <button onclick="showArticle('entrevista')">Entrevista</button>
+    <button onclick="showArticle('mercado')">Mercado</button>
+    <button onclick="showArticle('urbano')">Design Urbano</button>
+</nav>
+
+<div class="container">
+
+    <!-- SEÇÃO DE NOTÍCIAS COM IMAGENS -->
+    <section class="article active" id="home">
+        <h2>Últimas Notícias</h2>
+
+        <div class="news-card">
+            <img src="Inteligência artificial e design gráfico.png" alt="Influência da IA no Design" class="news-img">
+            <h3>A influência da Inteligência Artificial no Design Gráfico</h3>
+            <p class="preview">
+                A Inteligência Artificial está redefinindo o papel do designer, automatizando processos e ampliando possibilidades criativas.
+            </p>
+        </div>
+
+        <div class="news-card">
+            <img src="Darci.jpeg" alt="Entrevista com Darci" class="news-img">
+            <h3>Entrevista com Darci Campioti</h3>
+            <p class="preview">
+                Uma análise sobre as transformações no mercado e a importância da criatividade humana diante das novas tecnologias.
+            </p>
+        </div>
+
+        <div class="news-card">
+            <img src="imagem-muro.jpg" alt="Grafites em Campinas" class="news-img">
+            <h3>Grafites e murais transformam Campinas</h3>
+            <p class="preview">
+                O edital Campinas Arte Urbana fortalece artistas locais e transforma espaços públicos em galerias a céu aberto.
+            </p>
+        </div>
+
+        <div style="text-align:center; margin-top:40px;">
+            <a href="montage-edicao1.pdf" download class="download-btn">Baixar Jornal Impresso Completo (PDF)</a>
+        </div>
+
+    </section>
+
+    <section id="ia" class="article">
+        <h2>A influência da Inteligência Artificial no Design Gráfico</h2>
+        <div class="highlight">
+            A Inteligência Artificial está transformando processos criativos, otimizando tarefas e redefinindo o papel do designer.
+        </div>
+        <p>
+            Hoje, muito do design gráfico já parece padronizado e repetitivo. Capas, posts e identidades visuais seguem fórmulas prontas.
+            Assim como textos gerados por IA, parte do design atual apenas reproduz padrões já existentes.
+        </p>
+        <p>
+            A IA não elimina o designer. Ela exige mais repertório, pensamento estratégico e ousadia criativa.
+        </p>
+    </section>
+
+    <section id="entrevista" class="article">
+        <h2>Entrevista com Darci Campioti</h2>
+        <img src="Darci.jpeg" alt="Entrevista com Darci Campioti" class="img-top">
+        <p>
+            Em entrevista exclusiva, Darci destacou que a tecnologia amplia possibilidades, mas o diferencial continua sendo humano.
+        </p>
+        <p>
+            Criatividade, repertório e pensamento crítico são essenciais para o profissional que deseja se manter relevante.
+        </p>
+    </section>
+
+    <section id="mercado" class="article">
+        <h2>Design Gráfico: mercado e o
+        <p>
+            O designer gráfico pode atuar em agências, empresas, como freelancer ou empreendedor.
+            O mercado exige atualização constante e domínio de ferramentas digitais.
+        </p>
+        <p>
+            O crescimento do uso de IA no setor mostra que adaptação é parte essencial da profissão.
+        </p>
+    </section>
+
+    <section id="urbano" class="article">
+        <h2>Grafites e murais em Campinas</h2>
+        <p>
+            O edital "Campinas Arte Urbana" transformou espaços públicos com grafite e muralismo.
+        </p>
+        <p>
+            A iniciativa fortalece artistas locais e aproxima a população da arte urbana.
+        </p>
+    </section>
+
+</div>
+
+<style>
+.news-card {
+    margin-bottom: 50px;
+}
+
+.news-img {
+    width: 100%;
+    height: auto;
+    margin: 20px 0;
+    border: 3px solid var(--accent);
+}
+
+.news-card h3 {
+    font-family: 'Montserrat', sans-serif;
+    margin-bottom: 10px;
+}
+
+.preview {
+    margin-bottom: 10px;
+}
+
+.download-btn {
+    background-color: var(--accent);
+    color: var(--white);
+    padding: 12px 25px;
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    transition: 0.3s;
+}
+
+.download-btn:hover {
+    background-color: #6d3edb;
+}
+</style>
+
+<footer>
+    Projeto desenvolvido para Design Editorial — UNIP — 2026
+</footer>
+
+<script>
+    function showArticle(id) {
+        const articles = document.querySelectorAll('.article');
+        articles.forEach(article => article.classList.remove('active'));
+        document.getElementById(id).classList.add('active');
+    }
+</script>
+
+</body>
+</html>
